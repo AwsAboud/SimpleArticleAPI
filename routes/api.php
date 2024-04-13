@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\v1\ArticleController;
 use App\Http\Controllers\Api\V1\AuthorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::prefix('v1')->group(function(){
     Route::apiResource('authors', AuthorController::class);
+    Route::apiResource('articles', ArticleController::class);
 });
 

@@ -12,8 +12,14 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
+        'image',
         'published_at',
     ];
+
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
     public function authors(){
         return $this->belongsToMany(Author::class);
     }
